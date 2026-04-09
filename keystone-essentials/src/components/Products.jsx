@@ -32,67 +32,66 @@ export default function Products() {
   return (
     <section id="products" style={{ background: 'var(--cream)' }}>
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: 60 }}>
+        <div style={{ textAlign: 'center', marginBottom: 80 }}>
           <p className="section-label">Our Product Lines</p>
-          <h2 className="section-title" style={{ margin: '0 auto 16px' }}>Three Lines. One Mission.</h2>
-          <p style={{ color: 'var(--muted)', maxWidth: 500, margin: '0 auto', fontSize: 16 }}>
+          <h2 className="section-title" style={{ margin: '0 auto 20px' }}>Three Lines. One Mission.</h2>
+          <p style={{ color: 'var(--muted)', maxWidth: 550, margin: '0 auto', fontSize: 16, lineHeight: 1.7 }}>
             Each line is purpose-built for a specific skin need — find yours and shop directly on Amazon.
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 28 }}>
-          {lines.map(line => (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 32 }}>
+          {lines.map((line, i) => (
             <div key={line.name} style={{
               background: 'white',
-              border: '1px solid var(--border)',
-              borderRadius: 2,
+              border: '1.5px solid var(--border)',
+              borderRadius: 12,
               overflow: 'hidden',
-              transition: 'transform 0.3s, box-shadow 0.3s',
+              transition: 'all 0.3s ease',
+              animation: `fadeInUp 0.6s ease-out ${i * 0.1}s both`,
             }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.boxShadow = '0 20px 50px rgba(0,0,0,0.1)' }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-12px)'; e.currentTarget.style.boxShadow = '0 24px 60px rgba(0,0,0,0.12)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none' }}
             >
               {/* Card header */}
               <div style={{
-                background: line.color, padding: '40px 32px',
+                background: line.color, padding: '48px 32px',
                 position: 'relative', overflow: 'hidden',
               }}>
                 <div style={{
-                  position: 'absolute', top: -20, right: -20,
-                  width: 120, height: 120, borderRadius: '50%',
-                  background: `${line.accent}22`,
+                  position: 'absolute', top: -30, right: -30,
+                  width: 150, height: 150, borderRadius: '50%',
+                  background: `${line.accent}25`,
                 }} />
                 <span style={{
-                  display: 'inline-block', padding: '4px 12px',
+                  display: 'inline-block', padding: '6px 14px',
                   background: line.accent, color: 'white',
                   fontSize: 10, letterSpacing: 2, textTransform: 'uppercase',
-                  borderRadius: 1, marginBottom: 16, fontWeight: 600,
+                  borderRadius: 20, marginBottom: 20, fontWeight: 700,
                 }}>{line.badge}</span>
                 <h3 style={{
-                  fontFamily: 'var(--font-serif)', fontSize: 32,
-                  color: 'white', marginBottom: 4,
+                  fontFamily: 'var(--font-serif)', fontSize: 36,
+                  color: 'white', marginBottom: 6, fontWeight: 700,
                 }}>{line.name}</h3>
-                <p style={{ fontSize: 12, color: line.accent, letterSpacing: 2, textTransform: 'uppercase', fontWeight: 500 }}>
+                <p style={{ fontSize: 12, color: line.accent, letterSpacing: 2.5, textTransform: 'uppercase', fontWeight: 600 }}>
                   {line.tagline}
                 </p>
               </div>
 
               {/* Card body */}
-              <div style={{ padding: '28px 32px' }}>
-                <p style={{ color: 'var(--muted)', fontSize: 14, lineHeight: 1.8, marginBottom: 24 }}>{line.desc}</p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 28 }}>
+              <div style={{ padding: '32px' }}>
+                <p style={{ color: 'var(--muted)', fontSize: 15, lineHeight: 1.8, marginBottom: 28 }}>{line.desc}</p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 32 }}>
                   {line.features.map(f => (
                     <span key={f} style={{
-                      padding: '5px 12px', fontSize: 11, fontWeight: 500,
-                      background: 'var(--cream)', border: '1px solid var(--border)',
-                      borderRadius: 1, color: 'var(--text)', letterSpacing: 0.5,
+                      padding: '7px 14px', fontSize: 12, fontWeight: 600,
+                      background: 'var(--cream)', border: '1.5px solid var(--border)',
+                      borderRadius: 6, color: 'var(--text)', letterSpacing: 0.5,
                     }}>{f}</span>
                   ))}
                 </div>
                 <a
-                  href="https://www.amazon.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#shop"
                   className="btn btn-primary"
                   style={{ width: '100%', textAlign: 'center', display: 'block' }}
                 >

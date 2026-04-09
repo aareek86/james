@@ -10,7 +10,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const links = ['About', 'Products', 'Contact']
+  const links = ['About', 'Products', 'Shop', 'Contact']
 
   return (
     <nav style={{
@@ -49,7 +49,7 @@ export default function Navbar() {
             >{l}</a>
           ))}
           <a
-            href="https://www.amazon.com"
+            href="https://www.amazon.com/sp?ie=UTF8&seller=A1NZRRYRQ5LAV3"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary"
@@ -88,7 +88,7 @@ export default function Navbar() {
               style={{ textDecoration: 'none', fontSize: 14, fontWeight: 500, color: 'var(--text)', letterSpacing: 1, textTransform: 'uppercase' }}
             >{l}</a>
           ))}
-          <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.amazon.com/sp?ie=UTF8&seller=A1NZRRYRQ5LAV3" target="_blank" rel="noopener noreferrer"
             className="btn btn-primary" style={{ textAlign: 'center', marginTop: 8 }}>
             Shop Now
           </a>
