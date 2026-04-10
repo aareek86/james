@@ -27,12 +27,15 @@ export default function Navbar() {
         height: 70,
       }}>
         {/* Logo */}
-        <a href="#" style={{ textDecoration: 'none' }}>
-          <div style={{ fontFamily: 'var(--font-serif)', fontSize: 20, color: 'var(--dark)', fontWeight: 700 }}>
-            Keystone <span style={{ color: 'var(--gold)' }}>Essentials</span>
-          </div>
-          <div style={{ fontSize: 9, letterSpacing: 3, textTransform: 'uppercase', color: 'var(--muted)', marginTop: 2 }}>
-            Cornerstone Marketplace Solutions
+        <a href="#" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 12 }}>
+          <img src="/logo.png" alt="Keystone Essentials" style={{ width: 45, height: 45, objectFit: 'contain' }} />
+          <div>
+            <div style={{ fontFamily: 'var(--font-serif)', fontSize: 18, color: 'var(--dark)', fontWeight: 700, lineHeight: 1 }}>
+              Keystone <span style={{ color: 'var(--gold)' }}>Essentials</span>
+            </div>
+            <div style={{ fontSize: 9, letterSpacing: 2, textTransform: 'uppercase', color: 'var(--muted)', marginTop: 3 }}>
+              Cornerstone Marketplace Solutions
+            </div>
           </div>
         </a>
 
